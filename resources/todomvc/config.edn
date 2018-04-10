@@ -1,0 +1,13 @@
+{:duct.core/project-ns  todomvc
+ :duct.core/environment :production
+
+ :duct.module/logging {}
+ :duct.module.web/site {}
+ :duct.module/sql {}
+ :duct.module/cljs {:main todomvc.client}
+ 
+ :duct.router/cascading
+ [#ig/ref :todomvc.handler/example]
+
+ :todomvc.handler/example
+ {:db #ig/ref :duct.database/sql}}
