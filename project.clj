@@ -12,16 +12,17 @@
   :plugins [[duct/lein-duct "0.10.6"]]
   :main ^:skip-aot todomvc.main
   :resource-paths ["resources" "target/resources"]
-  :prep-tasks     ["javac" "compile" ["run" ":duct/compiler"]]
+  :prep-tasks ["javac" "compile" ["run" ":duct/compiler"]]
   :profiles
-  {:dev  [:project/dev :profiles/dev]
-   :repl {:prep-tasks   ^:replace ["javac" "compile"]
+  {:dev [:project/dev :profiles/dev]
+   :repl {:prep-tasks ^:replace ["javac" "compile"]
           :repl-options {:init-ns user
                          :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}}
    :uberjar {:aot :all}
    :profiles/dev {}
-   :project/dev  {:source-paths   ["dev/src"]
+   :project/dev  {:source-paths ["dev/src"]
                   :resource-paths ["dev/resources"]
-                  :dependencies   [[integrant/repl "0.2.0"]
-                                   [eftest "0.4.1"]
-                                   [kerodon "0.9.0"]]}})
+                  :dependencies [[integrant/repl "0.2.0"]
+                                 [eftest "0.4.1"]
+                                 [kerodon "0.9.0"]]
+                  :plugins [[venantius/ultra "0.5.1"]]}})

@@ -10,4 +10,5 @@
  [#ig/ref :todomvc.handler/example]
 
  :todomvc.handler/example
- {:db #ig/ref :duct.database/sql}}
+ {:db #ig/ref :duct.database/sql
+  :name "Clojure"}}
