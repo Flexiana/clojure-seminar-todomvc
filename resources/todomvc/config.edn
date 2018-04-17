@@ -1,9 +1,9 @@
-{:duct.core/project-ns  todomvc
+{:duct.core/project-ns todomvc
  :duct.core/environment :production
 
  :duct.module/logging {}
  :duct.module.web/site {}
- :duct.module/sql {}
+ :duct.module/sql {:database-url #duct/env ["DB_URL" Str]}
  :duct.module/cljs {:main todomvc.client}
  
  :duct.router/cascading
@@ -11,4 +11,11 @@
 
  :todomvc.handler/example
  {:db #ig/ref :duct.database/sql
-  :name "Clojure"}}
+  :name "Clojure"}
+
+ :duct.migrator/ragtime
+ {:migrations [#ig/ref :todomvc.migration/add-tasks]}
+
+ [:duct.migrator.ragtime/sql :todomvc.migration/add-tasks]
+ {:up [#duct/resource "todomvc/migrations/001-add-tasks.up.sql"]
+  :down [#duct/resource "todomvc/migrations/001-add-tasks.down.sql"]}}

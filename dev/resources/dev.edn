@@ -1,5 +1,2 @@
 {:duct.core/environment :development
- :duct.core/include ["todomvc/config"]
-
- :duct.module/sql
- {:database-url "jdbc:postgresql://localhost/postgres"}}
+ :duct.core/include ["todomvc/config"]}

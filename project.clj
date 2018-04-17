@@ -8,7 +8,8 @@
                  [duct/module.web "0.6.4"]
                  [duct/module.cljs "0.3.2"]
                  [duct/module.sql "0.4.2"]
-                 [org.postgresql/postgresql "42.1.4"]]
+                 [org.postgresql/postgresql "42.1.4"]
+                 [com.layerware/hugsql "0.4.7"]]
   :plugins [[duct/lein-duct "0.10.6"]]
   :main ^:skip-aot todomvc.main
   :resource-paths ["resources" "target/resources"]
