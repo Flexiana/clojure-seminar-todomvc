@@ -2,16 +2,15 @@
  :duct.core/environment :production
 
  :duct.module/logging {}
- :duct.module.web/site {}
+ :duct.module.web/api {}
  :duct.module/sql {:database-url #duct/env ["DB_URL" Str]}
  :duct.module/cljs {:main todomvc.client}
  
  :duct.router/cascading
- [#ig/ref :todomvc.handler/example]
+ [#ig/ref :todomvc.handler/api]
 
- :todomvc.handler/example
- {:db #ig/ref :duct.database/sql
-  :name "Clojure"}
+ :todomvc.handler/api
+ {:db #ig/ref :duct.database/sql}
 
  :duct.migrator/ragtime
  {:migrations [#ig/ref :todomvc.migration/add-tasks]}
