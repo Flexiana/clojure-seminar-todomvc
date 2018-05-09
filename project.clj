@@ -10,7 +10,8 @@
                  [duct/module.sql "0.4.2"]
                  [org.postgresql/postgresql "42.1.4"]
                  [com.layerware/hugsql "0.4.7"]
-                 [ring/ring-json "0.4.0"]]
+                 [ring/ring-json "0.4.0"]
+                 [funcool/struct "1.2.0"]]
   :plugins [[duct/lein-duct "0.10.6"]]
   :main ^:skip-aot todomvc.main
   :resource-paths ["resources" "target/resources"]
