@@ -5,7 +5,8 @@
 
 
 (defprotocol TaskService
-  (get-all [db-spec]))
+  (get-all [db-spec])
+  (create-task [db-spec task]))
 
 
 (extend-protocol TaskService
