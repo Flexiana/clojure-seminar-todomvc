@@ -4,13 +4,17 @@
  :duct.module/logging {}
  :duct.module.web/api {}
  :duct.module/sql {:database-url #duct/env ["DB_URL" Str]}
- :duct.module/cljs {:main todomvc.client}
+
+ :duct.middleware.web/defaults {:static {:resources "todomvc/public"}}
  
  :duct.router/cascading
- [#ig/ref :todomvc.handler/api]
+ [#ig/ref :todomvc.handler/api
+  #ig/ref :todomvc.handler/site]
 
  :todomvc.handler/api
  {:db #ig/ref :duct.database/sql}
+
+ :todomvc.handler/site {}
 
  :duct.migrator/ragtime
  {:migrations [#ig/ref :todomvc.migration/add-tasks]}

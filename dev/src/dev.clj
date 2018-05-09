@@ -6,8 +6,8 @@
             [clojure.java.io :as io]
             [duct.core :as duct]
             [duct.core.repl :as duct-repl]
-            [duct.repl.figwheel :refer [cljs-repl]]
             [eftest.runner :as eftest]
+            [figwheel-sidecar.repl-api :as figwheel-repl]
             [integrant.core :as ig]
             [integrant.repl :refer [clear halt go init prep reset]]
             [integrant.repl.state :refer [config system]]))
