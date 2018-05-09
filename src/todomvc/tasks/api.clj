@@ -22,3 +22,12 @@
                                                input))
        :status 201}
       {:body {:errors errors}, :status 400})))
+
+
+(defn finish-task
+  [conf request]
+  (let [[errors input] (st/validate (:params request) {:id [st/required st/integer-str]})
+        task (db/finish-task (:db conf) (:id input))]
+    (if (nil? task)
+      {:status 404}
+      {:status 200, :body task})))

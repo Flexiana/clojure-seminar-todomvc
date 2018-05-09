@@ -1,6 +1,6 @@
 (ns todomvc.handler.api
   (:require
-    [compojure.core :refer [context GET POST]]
+    [compojure.core :refer [context GET POST PATCH]]
     [integrant.core :as ig]
     [ring.middleware.json :refer [wrap-json-response]]
     [todomvc.tasks.api :as tasks]))
@@ -14,4 +14,6 @@
         (GET "/" [:as request]
           (tasks/get-tasks conf request))
         (POST "/" [:as request]
-          (tasks/create-task conf request))))))
+          (tasks/create-task conf request))
+        (PATCH "/:id" [id :as request]
+          (tasks/finish-task conf request))))))
