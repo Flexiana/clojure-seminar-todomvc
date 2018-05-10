@@ -10,7 +10,8 @@
 
 (def init-db
   {:tasks {:list nil
-           :new-task nil}})
+           :new-task nil
+           :errors nil}})
 
 
 (defn- main

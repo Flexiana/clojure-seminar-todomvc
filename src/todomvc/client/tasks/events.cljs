@@ -1,7 +1,9 @@
 (ns todomvc.client.tasks.events
   (:require
     [re-frame.core :as re-frame]
-    [todomvc.client.tasks.middlewares :as m]))
+    [struct.core :as st]
+    [todomvc.client.tasks.middlewares :as m]
+    [todomvc.tasks.schemas :refer [Task]]))
 
 
 (re-frame/reg-event-db
@@ -33,7 +35,8 @@
   :tasks/create-task
   [m/create-task]
   (fn [db _]
-    db))
+    (let [[errors model] (st/validate {:title (-> db :tasks :new-task)} Task)]
+      (assoc-in db [:tasks :errors] errors))))
 
 
 (re-frame/reg-event-db

@@ -1,17 +1,13 @@
 (ns todomvc.tasks.api
   (:require
     [struct.core :as st]
-    [todomvc.tasks.boundary :as db]))
+    [todomvc.tasks.boundary :as db]
+    [todomvc.tasks.schemas :refer [Task]]))
 
 
 (defn get-tasks
   [conf request]
   {:body (db/get-all (:db conf)), :status 200})
-
-
-(def Task
-  {:title [st/required]
-   :description [st/string]})
 
 
 (defn create-task

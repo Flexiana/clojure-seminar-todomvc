@@ -31,7 +31,8 @@
 (defn todomvc-wrapper
   [db]
   (let [tasks (-> db :tasks :list)
-        new-task (-> db :tasks :new-task)]
+        new-task (-> db :tasks :new-task)
+        error (-> db :tasks :errors :title)]
     [:div.todomvc-wrapper
      [:section.todoapp
       [:header.header
@@ -42,6 +43,8 @@
                 :value new-task
                 :on-key-up #(when (= KeyCodes/ENTER (.-keyCode %))
                               (re-frame/dispatch [:tasks/create-task]))
-                :on-change #(re-frame/dispatch [:tasks/update-new-task (-> % .-target .-value)])}]]
+                :on-change #(re-frame/dispatch [:tasks/update-new-task (-> % .-target .-value)])}]
+       (when error
+         [:div {:style {:color "red", :text-align "center"}} error])]
       (when (seq tasks)
         [main tasks])]]))
