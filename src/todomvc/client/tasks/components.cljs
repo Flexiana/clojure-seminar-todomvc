@@ -1,4 +1,7 @@
-(ns todomvc.client.tasks.components)
+(ns todomvc.client.tasks.components
+  (:require
+    [goog.events.KeyCodes :as KeyCodes]
+    [re-frame.core :as re-frame]))
 
 
 (defn todo-list
@@ -34,6 +37,9 @@
        [:h1 "todos"]
        [:input {:class "new-todo"
                 :placeholder "What needs to be done?"
-                :auto-focus true}]]
+                :auto-focus true
+                :on-key-up #(when (= KeyCodes/ENTER (.-keyCode %))
+                              (js/console.log % "Enter"))
+                :on-change #(re-frame/dispatch [:tasks/update-new-task (-> % .-target .-value)])}]]
       (when (seq tasks)
         [main tasks])]]))

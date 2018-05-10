@@ -21,3 +21,9 @@
   :tasks/handle-error-get-tasks
   (fn [db [_ xhr]]
     db))
+
+
+(re-frame/reg-event-db
+  :tasks/update-new-task
+  (fn [db [_ title]]
+    (assoc-in db [:tasks :new-task] title)))
