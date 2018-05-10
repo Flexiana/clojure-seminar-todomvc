@@ -30,7 +30,8 @@
 
 (defn todomvc-wrapper
   [db]
-  (let [tasks (-> db :tasks :list)]
+  (let [tasks (-> db :tasks :list)
+        new-task (-> db :tasks :new-task)]
     [:div.todomvc-wrapper
      [:section.todoapp
       [:header.header
@@ -38,8 +39,9 @@
        [:input {:class "new-todo"
                 :placeholder "What needs to be done?"
                 :auto-focus true
+                :value new-task
                 :on-key-up #(when (= KeyCodes/ENTER (.-keyCode %))
-                              (js/console.log % "Enter"))
+                              (re-frame/dispatch [:tasks/create-task]))
                 :on-change #(re-frame/dispatch [:tasks/update-new-task (-> % .-target .-value)])}]]
       (when (seq tasks)
         [main tasks])]]))

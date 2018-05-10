@@ -1,6 +1,6 @@
 (ns todomvc.client.tasks.middlewares
   (:require
-    [ajax.core :refer [GET]]
+    [ajax.core :refer [GET POST]]
     [re-frame.core :as re-frame]))
 
 
@@ -13,3 +13,15 @@
            :keywords? true
            :handler #(re-frame/dispatch [:tasks/handle-get-tasks %])
            :error-handler #(re-frame/dispatch [:tasks/handle-error-get-tasks %])))))
+
+
+(def create-task
+  (re-frame/after
+    (fn [db _]
+      (POST "/api/tasks"
+            :params {:title (-> db :tasks :new-task)}
+            :format :json
+            :response-format :json
+            :keywords? true
+            :handler #(re-frame/dispatch [:tasks/handle-create-task %])
+            :error-handler #(re-frame/dispatch [:tasks/handle-error-create-task %])))))
