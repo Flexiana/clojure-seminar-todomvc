@@ -1,6 +1,6 @@
-(defproject todomvc "0.1.0-SNAPSHOT"
-  :description "FIXME: write description"
-  :url "http://example.com/FIXME"
+(defproject todomvc "0.0.0"
+  :description "A Todomvc project for a Clojure seminar"
+  :url "https://github.com/Flexiana/clojure-seminar-todomvc"
   :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [org.clojure/clojurescript "1.10.238"]
