@@ -1,4 +1,4 @@
-(defproject todomvc "0.0.0"
+(defproject todomvc "0.1.0"
   :description "A Todomvc project for a Clojure seminar"
   :url "https://github.com/Flexiana/clojure-seminar-todomvc"
   :min-lein-version "2.0.0"
