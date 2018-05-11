@@ -1,6 +1,8 @@
 # todomvc
 
-FIXME: description
+A Todomvc project for a Clojure seminar
+
+See slides [https://github.com/Flexiana/clojure-seminar-slides](https://github.com/Flexiana/clojure-seminar-slides)
 
 ## Developing
 
@@ -76,7 +78,3 @@ But you can also run tests through Leiningen.
 ```sh
 lein test
 ```
-
-## Legal
-
-Copyright © 2018 FIXME
