@@ -8,9 +8,9 @@
                  [duct/module.logging "0.3.1"]
                  [duct/module.web "0.6.4"]
                  [duct/module.sql "0.4.2"]
-                 [org.clojure/tools.reader "1.2.1"]
+                 [org.clojure/tools.reader "1.2.2"]
                  [org.postgresql/postgresql "42.2.2"]
-                 [com.layerware/hugsql "0.4.7"]
+                 [com.layerware/hugsql "0.4.8"]
                  [ring/ring-json "0.4.0"]
                  [funcool/struct "1.2.0"]
                  [reagent "0.8.0"]
@@ -30,15 +30,15 @@
    :profiles/dev {}
    :project/dev  {:source-paths ["dev/src"]
                   :resource-paths ["dev/resources"]
-                  :dependencies [[integrant/repl "0.2.0"]
-                                 [eftest "0.4.1"]
+                  :dependencies [[integrant/repl "0.3.1"]
+                                 [eftest "0.5.2"]
                                  [kerodon "0.9.0"]
                                  [figwheel "0.5.16"]
                                  [figwheel-sidecar "0.5.16"]
                                  [re-frisk "0.5.4"]
                                  [binaryage/devtools "0.9.10"]]
                   :plugins [[lein-figwheel "0.5.16"]
-                            [venantius/ultra "0.5.1"]]}}
+                            [venantius/ultra "0.5.2"]]}}
   :cljsbuild
   {:builds
    [{:id "dev"
