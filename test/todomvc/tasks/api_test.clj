@@ -4,7 +4,7 @@
     [cheshire.core :as cheshire]
     [integrant.core :as ig]
     [ring.mock.request :as mock]
-    [todomvc.tasks.api]
+    [todomvc.handler.api]
     [todomvc.tasks.boundary :refer [TaskService]]))
 
 
