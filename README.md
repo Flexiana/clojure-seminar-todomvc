@@ -4,6 +4,16 @@ A Todomvc project for a Clojure seminar
 
 See slides [https://github.com/Flexiana/clojure-seminar-slides](https://github.com/Flexiana/clojure-seminar-slides)
 
+[![Dependencies Status](https://jarkeeper.com/flexiana/clojure-seminar-slides/status.png)](https://jarkeeper.com/flexiana/clojure-seminar-slides)
+[![License](https://img.shields.io/badge/MIT-Clause-blue.svg)](https://opensource.org/licenses/MIT)
+
+## Requirements
+
+* Java 10 and newer
+* Leiningen 2 and newer
+* PostgreSQL 10 and newer
+
+
 ## Developing
 
 ### Setup

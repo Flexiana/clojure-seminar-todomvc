@@ -9,7 +9,7 @@
                  [duct/module.web "0.6.4"]
                  [duct/module.sql "0.4.2"]
                  [org.clojure/tools.reader "1.2.1"]
-                 [org.postgresql/postgresql "42.1.4"]
+                 [org.postgresql/postgresql "42.2.2"]
                  [com.layerware/hugsql "0.4.7"]
                  [ring/ring-json "0.4.0"]
                  [funcool/struct "1.2.0"]
