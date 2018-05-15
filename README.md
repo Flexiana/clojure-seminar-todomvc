@@ -4,6 +4,7 @@ A Todomvc project for a Clojure seminar
 
 See slides [https://github.com/Flexiana/clojure-seminar-slides](https://github.com/Flexiana/clojure-seminar-slides)
 
+[![CircleCI](https://circleci.com/gh/flexiana/clojure-seminar-todomvc.svg?style=svg)](https://circleci.com/gh/flexiana/clojure-seminar-todomvc)
 [![Dependencies Status](https://jarkeeper.com/flexiana/clojure-seminar-todomvc/status.png)](https://jarkeeper.com/flexiana/clojure-seminar-todomvc)
 [![License](https://img.shields.io/badge/MIT-Clause-blue.svg)](https://opensource.org/licenses/MIT)
 

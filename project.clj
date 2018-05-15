@@ -17,7 +17,8 @@
                  [re-frame "0.10.5"]
                  [cljs-ajax "0.7.3"]]
   :plugins [[duct/lein-duct "0.10.6"]
-            [lein-cljsbuild "1.1.7"]]
+            [lein-cljsbuild "1.1.7"]
+            [lein-kibit "0.1.6"]]
   :clean-targets ^{:protect false} ["resources/todomvc/public/js" :target-path]
   :main ^:skip-aot todomvc.main
   :resource-paths ["resources" "target/resources"]
